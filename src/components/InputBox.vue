@@ -13,7 +13,7 @@
             <slot></slot>
         </div>
 
-        <div class="subtitle"> When the water fills the screen, 7 minutes have passed.</div>
+        <div class="subtitle"> When the water fills the screen, 1 minute have passed (can be any time in final version).</div>
     </div>
 </div>
 </template>
