@@ -38,14 +38,14 @@ export default new Vuex.Store({
   },
   actions: {
 
-    async getPromptOnce({commit}) {
+    async getPromptOnce({commit}) { 
       const snapshot = await db.collection('prompt').doc('currentPrompt').get();
 
       // update the store with the prompt
       commit('updatePrompt', snapshot.data().promptText);
     },
 
-    async updatePrompt({commit}, newPrompt) {
+    async updatePrompt({commit}, newPrompt) { //eslint-disable-line
       const promptRef = db.collection('prompt');
       promptRef.doc('currentPrompt').set({
         promptText: newPrompt
