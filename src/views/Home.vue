@@ -27,22 +27,27 @@ export default {
     data() {
         return {
             writing: false,
-            time: 1, // in minutes
+            time: 7, // in minutes
             supported: true
         }
     },
 
     methods: {
         startWriting() {
-            this.$store.commit('updateWritingState', true)
+            this.$store.commit('updateWritingState', true);
             setTimeout(() => {
 
                 this.$router.push('/timeup');
 
-            }, this.time * 60 * 1000)
+            }, this.time * 60 * 1000); 
         }
     },
     created() {
+
+        // fetch the prompt
+        this.$store.dispatch('getPromptOnce');
+
+        // check for file saving compatibility
         try {
             const fileSaverSupported = !!new Blob; // eslint-disable-line
             this.supported = true;
@@ -50,6 +55,9 @@ export default {
             this.supported = false;
             console.error('It does not look like your browser supports file saving, please update.')
         }
+
+        
+
     }
 
 }

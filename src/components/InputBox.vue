@@ -2,7 +2,7 @@
 <div class="box">
 
     <div class="prompt">
-        Prompt: What makes you happy?
+        {{prompt}}
     </div>
     <textarea class="story-input" placeholder="Type here..." v-model="writingResult" v-if="allowInput"></textarea>
     <div v-else>
@@ -13,7 +13,7 @@
             <slot></slot>
         </div>
 
-        <div class="subtitle"> When the water fills the screen, 1 minute has passed (can be any time in final version).</div>
+        <div class="subtitle"> When the water fills the screen, 7 minutes have passed.</div>
     </div>
 </div>
 </template>
@@ -21,6 +21,9 @@
 <script>
 export default {
     computed: {
+        prompt() {
+            return this.$store.state.prompt;
+        },
         allowInput() {
             return this.$store.state.writing;
         },

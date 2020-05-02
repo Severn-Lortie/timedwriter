@@ -6,11 +6,9 @@
 
 <script>
 export default {
-
     components: {
         MainLayout: () => import('../components/save/MainLayout')
     }
-
 }
 </script>
 

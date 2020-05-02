@@ -67,7 +67,7 @@ export default {
 }
 
 .animated {
-    animation: fill-up 60s;
+    animation: fill-up 420s; /* fills for 7 minutes */
 }
 
 .header {
