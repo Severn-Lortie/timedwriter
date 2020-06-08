@@ -76,6 +76,9 @@ export default {
 
 .prompt {
     margin-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px
 }
 
 /* should be applied to root element from Home.vue */
